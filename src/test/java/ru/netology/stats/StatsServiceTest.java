@@ -23,9 +23,9 @@ class StatsServiceTest {
     void avrgsale() {
         StatsService service = new StatsService();
         int[] month = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        long expected = 15;
+        double expected = 15;
 
-        int actual = service.avrgSale(month);
+        double actual = service.avrgSale(month);
 
         assertEquals(expected, actual);
         System.out.println(actual);
@@ -35,9 +35,9 @@ class StatsServiceTest {
     void maxsale() {
         StatsService service = new StatsService();
         int[] month = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        long expected = 6;
+        long expected = 8;
 
-        int actual = service.maxsale(month);
+       int actual = service.maxsale(month);
 
         assertEquals(expected, actual);
         System.out.println(actual);
@@ -61,7 +61,7 @@ class StatsServiceTest {
         int[] month = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         long expected = 5;
 
-        int actual = service.undersale(month);
+        int actual= service.undersale(month);
 
         assertEquals(expected, actual);
         System.out.println(actual);

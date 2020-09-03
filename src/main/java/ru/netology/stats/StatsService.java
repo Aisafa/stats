@@ -9,31 +9,30 @@ public class StatsService {
         return sum;
     }
 
-    public int avrgSale(int month[]) {
-        int sum = 0;
+    public double avrgSale(int month[]) {
+        double sum = 0;
         for (int x : month) {
             sum += x;
         }
-        int average = sum / month.length;
+        double average = sum / month.length;
         return average;
     }
 
-    public int maxsale(int month[]) {
+    public int maxsale(int[] month) {
         int max = month[0];
         int imax = 0;
         for (int i = 0; i < month.length; i++) {
 
-            if (max < month[i]) {
+            if (max <= month[i]) {
                 max = month[i];
                 imax = i;
             }
         }
-        int iimax = imax + 1;
-        return (int) iimax;
 
+        return imax + 1;
     }
 
-    public int minsale(int month[]) {
+    public int minsale(int[] month) {
         int min = month[0];
         int imin = 0;
         for (int i = 0; i < month.length; i++) {
@@ -43,20 +42,14 @@ public class StatsService {
                 imin = i;
             }
         }
-        int iimin = imin + 1;
-        return (int) iimin;
+
+        return imin + 1;
     }
 
     public int undersale(int month[]) {
-        int sum = 0;
-        for (int x : month) {
-            sum += x;
-        }
-        int average = sum / month.length;
-
-        int counter = 0;
+               int counter = 0;
         for (int i = 0; i < month.length; i++) {
-            if (month[i] < average) {
+            if (month[i] < avrgSale(month)) {
                 counter++;
             }
         }
@@ -64,15 +57,10 @@ public class StatsService {
     }
 
     public int uppersale(int month[]) {
-        int sum = 0;
-        for (int x : month) {
-            sum += x;
-        }
-        int average = sum / month.length;
 
         int counter = 0;
         for (int i = 0; i < month.length; i++) {
-            if (month[i] > average) {
+            if (month[i] > avrgSale(month)) {
                 counter++;
             }
         }
