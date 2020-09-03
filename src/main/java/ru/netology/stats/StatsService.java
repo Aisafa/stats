@@ -21,21 +21,20 @@ public class StatsService {
     public int maxsale(int[] month) {
         int max = month[0];
         int imax = 0;
-        for (int i = 0; i < month.length; i++) {
+        for (int i = 1; i < month.length;i++) {
 
             if (max <= month[i]) {
                 max = month[i];
                 imax = i;
             }
         }
-
         return imax + 1;
     }
 
     public int minsale(int[] month) {
         int min = month[0];
         int imin = 0;
-        for (int i = 0; i < month.length; i++) {
+        for (int i = 1; i < month.length; i++) {
 
             if (min > month[i]) {
                 min = month[i];
