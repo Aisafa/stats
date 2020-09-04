@@ -36,7 +36,7 @@ public class StatsService {
         int imin = 0;
         for (int i = 1; i < month.length; i++) {
 
-            if (min > month[i]) {
+            if (min >= month[i]) {
                 min = month[i];
                 imin = i;
             }
