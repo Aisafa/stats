@@ -41,7 +41,6 @@ public class StatsService {
                 imin = i;
             }
         }
-
         return imin + 1;
     }
 
